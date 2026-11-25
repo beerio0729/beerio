@@ -191,10 +191,9 @@ img {
 }
 
 .brand-logo {
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
-    border-radius: 8px;
 }
 
 .brand-text {
@@ -942,11 +941,6 @@ img {
 
 .footer-logo-wrap .brand-name {
     color: #FFFFFF;
-}
-
-.footer-logo-wrap .brand-logo {
-    background: #FFFFFF;
-    padding: 4px;
 }
 
 .footer-about {
