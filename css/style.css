@@ -360,13 +360,13 @@ img {
 
 @media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) and (pointer: coarse) {
     .home-section {
-        background-position: 30% center;
+        background-position: 60% center;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     .home-section {
-        background-position: 45% center;
+        background-position: 55% center;
     }
 }
 
