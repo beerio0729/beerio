@@ -370,6 +370,12 @@ img {
     }
 }
 
+@media (min-width: 768px) {
+    .home-section {
+        background-position: 0% center;
+    }
+}
+
 
 
 /* รูปทรงสี่เหลี่ยมมนโปร่งแสง สไตล์เดียวกับโลโก้ Beerio.Net */
