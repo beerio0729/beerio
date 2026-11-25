@@ -1,0 +1,80 @@
+function initSite() {
+    const siteHeader = document.getElementById('siteHeader');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    // 1. เพิ่มเงาให้ Header เมื่อเลื่อนหน้าจอลง
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            siteHeader.classList.add('scrolled');
+        } else {
+            siteHeader.classList.remove('scrolled');
+        }
+    });
+
+    // 2. เปิด-ปิดเมนูหลักบนมือถือ / แท็บเล็ต
+    mobileToggle.addEventListener('click', () => {
+        const isOpen = mainNav.classList.toggle('open');
+        mobileToggle.setAttribute('aria-expanded', isOpen);
+        mobileToggle.innerHTML = isOpen
+            ? '<i class="fa-solid fa-xmark"></i>'
+            : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    // 3. รองรับการกดเปิด-ปิด Multi-layer Dropdown บนหน้าจอเล็ก (<= 860px)
+    const dropdownTriggers = document.querySelectorAll('.has-dropdown > .nav-link, .has-submenu > .dropdown-link');
+
+    dropdownTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            if (window.innerWidth <= 860) {
+                e.preventDefault();
+                const parentItem = trigger.parentElement;
+
+                // ปิดเมนูระดับเดียวกันตัวอื่นที่เปิดค้างอยู่
+                const siblings = parentItem.parentElement.children;
+                Array.from(siblings).forEach(sibling => {
+                    if (sibling !== parentItem) {
+                        sibling.classList.remove('active');
+                    }
+                });
+
+                parentItem.classList.toggle('active');
+            }
+        });
+    });
+
+    // 4. ปิดเมนูมือถืออัตโนมัติเมื่อคลิกลิงก์ปลายทาง
+    const allNavLinks = document.querySelectorAll('.main-nav a');
+    allNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const parent = link.parentElement;
+            const isTriggerOnMobile = window.innerWidth <= 860 &&
+                (parent.classList.contains('has-dropdown') || parent.classList.contains('has-submenu'));
+
+            if (!isTriggerOnMobile && mainNav.classList.contains('open')) {
+                mainNav.classList.remove('open');
+                mobileToggle.setAttribute('aria-expanded', 'false');
+                mobileToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            }
+        });
+    });
+
+    // 5. รีเซ็ตสถานะเมนูเมื่อขยายจอกลับเป็น Desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 860) {
+            mainNav.classList.remove('open');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            mobileToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            document.querySelectorAll('.has-dropdown.active, .has-submenu.active').forEach(el => {
+                el.classList.remove('active');
+            });
+        }
+    });
+}
+
+// script.js ถูกโหลดหลัง DOMContentLoaded (โดย include.js) จึงต้องเช็กสถานะก่อน
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSite);
+} else {
+    initSite();
+}
