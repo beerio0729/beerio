@@ -355,8 +355,22 @@ img {
     overflow: hidden;
     background:
         linear-gradient(90deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.5) 45%, rgba(255, 255, 255, 0) 100%),
-        url("../img/home-bg.webp") center / cover no-repeat;
+        url("../img/home-bg.webp") 0% center / cover no-repeat;
 }
+
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) and (pointer: coarse) {
+    .home-section {
+        background-position: 30% center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .home-section {
+        background-position: 45% center;
+    }
+}
+
+
 
 /* รูปทรงสี่เหลี่ยมมนโปร่งแสง สไตล์เดียวกับโลโก้ Beerio.Net */
 .home-bg-shapes .shape {
