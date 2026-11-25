@@ -350,23 +350,43 @@ img {
    home SECTION
 ========================================== */
 .home-section {
+    --ov-start: rgba(255, 255, 255, 0.75);
+    --ov-mid: rgba(255, 255, 255, 0.5);
+    --ov-end: rgba(255, 255, 255, 0);
+    --bg-pos: 100% center;
+
     position: relative;
     padding: 75px 0 90px;
     overflow: hidden;
     background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.5) 45%, rgba(255, 255, 255, 0) 100%),
-        url("../img/home-bg.webp") 0% center / cover no-repeat;
+        linear-gradient(90deg, var(--ov-start) 0%, var(--ov-mid) 45%, var(--ov-end) 100%),
+        url("../img/home-bg.webp") var(--bg-pos) / cover no-repeat;
 }
 
-@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) and (pointer: coarse) {
+/* แท็บเล็ต / จอแคบ: เนื้อหาเรียงคอลัมน์เดียว ให้คนอยู่ครึ่งขวา และเพิ่มความขาวให้อ่านข้อความง่าย */
+@media (max-width: 1024px) {
     .home-section {
-        background-position: 60% center;
+        --bg-pos: 65% center;
+        --ov-start: rgba(255, 255, 255, 0.92);
+        --ov-mid: rgba(255, 255, 255, 0.7);
+        --ov-end: rgba(255, 255, 255, 0.15);
     }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+/* iPad Pro แนวตั้ง */
+@media (min-width: 768px) and (max-width: 1032px) and (orientation: portrait) {
     .home-section {
-        background-position: 55% center;
+        --bg-pos: 60% center;
+    }
+}
+
+/* โทรศัพท์: ใช้รูปเดิม ชิดซ้าย ไม่ให้เห็นตัวคน */
+@media (max-width: 767px) and (orientation: portrait) {
+    .home-section {
+        --bg-pos: 0% center;
+        --ov-start: rgba(255, 255, 255, 0.75);
+        --ov-mid: rgba(255, 255, 255, 0.6);
+        --ov-end: rgba(255, 255, 255, 0.4);
     }
 }
 
