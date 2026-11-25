@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     await Promise.all([...targets].map(async (el) => {
         try {
-            const res = await fetch(el.dataset.include);
+            const res = await fetch(el.dataset.include, { cache: 'no-cache' });
             if (!res.ok) throw new Error(res.status);
             el.outerHTML = await res.text();
         } catch (err) {
