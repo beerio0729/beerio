@@ -1257,10 +1257,6 @@ img {
     box-shadow: 0 6px 18px rgba(6, 199, 85, 0.45);
 }
 
-.line-float:active {
-    transform: scale(0.94);
-}
-
 .line-icon {
     display: block;
     width: 100%;   /* แก้ขนาดตรงนี้ */
