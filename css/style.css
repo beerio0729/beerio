@@ -793,6 +793,14 @@ img {
     align-items: stretch;
 }
 
+.pricing-grid[data-billing-panel] {
+    display: none;
+}
+
+.pricing-grid[data-billing-panel].active {
+    display: grid;
+}
+
 .pricing-card {
     position: relative;
     background: #FFFFFF;
@@ -833,6 +841,13 @@ img {
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--primary-navy);
+}
+
+.plan-note {
+    margin: -8px 0 20px;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--text-muted, #64748b);
 }
 
 .plan-desc {
@@ -894,6 +909,72 @@ img {
 
 .plan-features li.muted i {
     color: var(--soft-blue);
+}
+
+/* ==========================================
+   BILLING TOGGLE (รายเดือน / รายปี)
+========================================== */
+.billing-toggle {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto 40px;
+    padding: 5px;
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    box-shadow: var(--shadow-sm);
+}
+
+.billing-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-body);
+    background: transparent;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.billing-tab.active {
+    background: var(--primary-navy);
+    color: #FFFFFF;
+}
+
+.save-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #DCFCE7;
+    color: #166534;
+}
+
+.plan-note {
+    margin: -8px 0 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #166534;
+}
+
+.plan-note:empty {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .billing-tab {
+        padding: 10px 16px;
+        font-size: 0.88rem;
+    }
+
+    .save-badge {
+        display: none;
+    }
 }
 
 /* ==========================================

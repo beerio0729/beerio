@@ -70,7 +70,22 @@ function initSite() {
             });
         }
     });
-}
+
+    // 6. สลับเปิด-ปิด Grid แพ็กเกจ รายเดือน / รายปี
+    const billingTabs = document.querySelectorAll('.billing-tab');
+    const billingPanels = document.querySelectorAll('.pricing-grid[data-billing-panel]');
+
+    billingTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const mode = tab.dataset.billing;
+
+            billingTabs.forEach(t => t.classList.toggle('active', t === tab));
+            billingPanels.forEach(panel => {
+                panel.classList.toggle('active', panel.dataset.billingPanel === mode);
+            });
+        });
+    });
+} // <-- ปิด initSite() ตรงนี้
 
 // script.js ถูกโหลดหลัง DOMContentLoaded (โดย include.js) จึงต้องเช็กสถานะก่อน
 if (document.readyState === 'loading') {

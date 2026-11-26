@@ -7,7 +7,18 @@
             <p class="section-subtitle">ไม่มีสัญญาผูกมัดระยะยาว ปรับเพิ่ม-ลดได้ตามจำนวนเครื่องจริง</p>
         </div>
 
-        <div class="pricing-grid">
+        <!-- แท็บเลือกรอบบิล -->
+        <div class="billing-toggle" role="tablist" aria-label="เลือกรอบบิล">
+            <button type="button" class="billing-tab active" data-billing="monthly" aria-selected="true">
+                รายเดือน
+            </button>
+            <button type="button" class="billing-tab" data-billing="yearly" aria-selected="false">
+                รายปี <span class="save-badge">ประหยัดสูงสุด 10%</span>
+            </button>
+        </div>
+
+        <!-- แพ็กเกจรายเดือน -->
+        <div class="pricing-grid active" data-billing-panel="monthly">
             <!-- Plan 1: Starter -->
             <div class="pricing-card">
                 <div class="plan-name">Starter Office</div>
@@ -17,6 +28,7 @@
                     <span class="amount">1,000</span>
                     <span class="period">/ เดือน</span>
                 </div>
+                <p class="plan-note">รายเดือน จ่ายตามรอบบิลปกติ</p>
                 <ul class="plan-features">
                     <li><i class="fa-solid fa-check"></i> ดูแลคอมพิวเตอร์สูงสุด 5 เครื่อง</li>
                     <li><i class="fa-solid fa-check"></i> Remote Support ไม่จำกัดจำนวนครั้ง</li>
@@ -39,6 +51,7 @@
                     <span class="amount">2,900</span>
                     <span class="period">/ เดือน</span>
                 </div>
+                <p class="plan-note">รายเดือน จ่ายตามรอบบิลปกติ</p>
                 <ul class="plan-features">
                     <li><i class="fa-solid fa-check"></i> ดูแลคอมพิวเตอร์สูงสุด 15 เครื่อง</li>
                     <li><i class="fa-solid fa-check"></i> Remote Support ไม่จำกัดจำนวนครั้ง</li>
@@ -60,6 +73,77 @@
                     <span class="amount">5,500</span>
                     <span class="period">/ เดือน</span>
                 </div>
+                <p class="plan-note">รายเดือน จ่ายตามรอบบิลปกติ</p>
+                <ul class="plan-features">
+                    <li><i class="fa-solid fa-check"></i> ดูแลคอมพิวเตอร์สูงสุด 30 เครื่อง</li>
+                    <li><i class="fa-solid fa-check"></i> Remote Support ไม่จำกัดจำนวนครั้ง</li>
+                    <li><i class="fa-solid fa-check"></i> เข้าหน้างาน (On-Site) ฟรี 2 ครั้ง/เดือน</li>
+                    <li><i class="fa-solid fa-check"></i> ดูแล Router, Wi-Fi, NAS และ Printer</li>
+                    <li><i class="fa-solid fa-check"></i> วางแผนและดูแลระบบ Backup เต็มรูปแบบ</li>
+                    <li><i class="fa-solid fa-check"></i> จัดทำทะเบียนทรัพย์สิน IT ประจำบริษัท</li>
+                    <li><i class="fa-solid fa-check"></i> ประสานงานผู้ให้บริการอินเทอร์เน็ต/ซอฟต์แวร์แทน</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline btn-block">ติดต่อขอใบเสนอราคา</a>
+            </div>
+        </div>
+
+        <!-- แพ็กเกจรายปี -->
+        <div class="pricing-grid" data-billing-panel="yearly">
+            <!-- Plan 1: Starter Yearly -->
+            <div class="pricing-card">
+                <div class="plan-name">Starter Office</div>
+                <p class="plan-desc">เหมาะสำหรับออฟฟิศขนาดเล็ก 1–5 เครื่อง</p>
+                <div class="plan-price">
+                    <span class="currency">฿</span>
+                    <span class="amount">11,400</span>
+                    <span class="period">/ ปี</span>
+                </div>
+                <p class="plan-note">เฉลี่ยเดือนละ 950 บาท (ประหยัด 5%)</p>
+                <ul class="plan-features">
+                    <li><i class="fa-solid fa-check"></i> ดูแลคอมพิวเตอร์สูงสุด 5 เครื่อง</li>
+                    <li><i class="fa-solid fa-check"></i> Remote Support ไม่จำกัดจำนวนครั้ง</li>
+                    <li><i class="fa-solid fa-check"></i> เข้าหน้างาน (On-Site) ฟรี 1 ครั้ง/เดือน</li>
+                    <li><i class="fa-solid fa-check"></i> ดูแล Router, Wi-Fi, NAS และ Printer</li>
+                    <li><i class="fa-solid fa-check"></i> วางแผนและดูแลระบบ Backup เต็มรูปแบบ</li>
+                    <li><i class="fa-solid fa-check"></i> จัดทำทะเบียนทรัพย์สิน IT ประจำบริษัท</li>
+                    <li><i class="fa-solid fa-check"></i> ประสานงานผู้ให้บริการอินเทอร์เน็ต/ซอฟต์แวร์แทน</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline btn-block">เริ่มต้นแพ็กเกจนี้</a>
+            </div>
+
+            <!-- Plan 2: Popular Yearly -->
+            <div class="pricing-card featured">
+                <div class="popular-ribbon">ยอดนิยมสำหรับ SME</div>
+                <div class="plan-name">Business Growth</div>
+                <p class="plan-desc">เหมาะสำหรับบริษัท 6–15 เครื่อง พร้อมดูแลเน็ตเวิร์ก</p>
+                <div class="plan-price">
+                    <span class="currency">฿</span>
+                    <span class="amount">33,000</span>
+                    <span class="period">/ ปี</span>
+                </div>
+                <p class="plan-note">เฉลี่ยเดือนละ 2,750 บาท (ประหยัด 5%)</p>
+                <ul class="plan-features">
+                    <li><i class="fa-solid fa-check"></i> ดูแลคอมพิวเตอร์สูงสุด 15 เครื่อง</li>
+                    <li><i class="fa-solid fa-check"></i> Remote Support ไม่จำกัดจำนวนครั้ง</li>
+                    <li><i class="fa-solid fa-check"></i> เข้าหน้างาน (On-Site) ฟรี 1 ครั้ง/เดือน</li>
+                    <li><i class="fa-solid fa-check"></i> ดูแล Router, Wi-Fi, NAS และ Printer</li>
+                    <li><i class="fa-solid fa-check"></i> วางแผนและดูแลระบบ Backup เต็มรูปแบบ</li>
+                    <li><i class="fa-solid fa-check"></i> จัดทำทะเบียนทรัพย์สิน IT ประจำบริษัท</li>
+                    <li><i class="fa-solid fa-check"></i> ประสานงานผู้ให้บริการอินเทอร์เน็ต/ซอฟต์แวร์แทน</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary btn-block">เลือกแพ็กเกจแนะนำ</a>
+            </div>
+
+            <!-- Plan 3: Pro Yearly -->
+            <div class="pricing-card">
+                <div class="plan-name">Pro Enterprise</div>
+                <p class="plan-desc">เหมาะสำหรับบริษัท 16–30 เครื่อง ต้องการดูแลใกล้ชิด</p>
+                <div class="plan-price">
+                    <span class="currency">฿</span>
+                    <span class="amount">59,400</span>
+                    <span class="period">/ ปี</span>
+                </div>
+                <p class="plan-note">เฉลี่ยเดือนละ 4,950 บาท (ประหยัด 10%)</p>
                 <ul class="plan-features">
                     <li><i class="fa-solid fa-check"></i> ดูแลคอมพิวเตอร์สูงสุด 30 เครื่อง</li>
                     <li><i class="fa-solid fa-check"></i> Remote Support ไม่จำกัดจำนวนครั้ง</li>
