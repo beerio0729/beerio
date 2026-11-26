@@ -1,5 +1,5 @@
 /* ==========================================
-   CSS VARIABLES (โทนสีถอดจากโลโก้ Beerio.Net)
+   CSS VARIABLES (โทนสีถอดจากโลโก้ Beerio Network)
 ========================================== */
 :root {
     --primary-navy: #2A348E;
@@ -406,7 +406,7 @@ img {
 }
 
 
-/* รูปทรงสี่เหลี่ยมมนโปร่งแสง สไตล์เดียวกับโลโก้ Beerio.Net */
+/* รูปทรงสี่เหลี่ยมมนโปร่งแสง สไตล์เดียวกับโลโก้ Beerio Network */
 .home-bg-shapes .shape {
     position: absolute;
     border-radius: 36px;
@@ -478,6 +478,9 @@ img {
     background: rgba(115, 203, 239, 0.3);
     padding: 0 10px;
     border-radius: 8px;
+    width: fit-content;
+    margin-top: 10px;
+    font-size: 1.2em;
 }
 
 .home-desc {
@@ -1259,6 +1262,7 @@ img {
 
 .line-icon {
     display: block;
-    width: 100%;   /* แก้ขนาดตรงนี้ */
+    width: 100%;
+    /* แก้ขนาดตรงนี้ */
 
 }
