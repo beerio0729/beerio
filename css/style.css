@@ -214,8 +214,9 @@ img {
     font-size: 1rem;
     color: var(--primary-navy);
     line-height: 1;
-    transform: scaleY(1.2);
-    letter-spacing: 2px;
+    transform: scaleY(1.1);
+    letter-spacing: 0.5px;
+    font-weight: 600;
 }
 
 .brand-sub {
@@ -474,7 +475,7 @@ img {
     -webkit-text-fill-color: transparent;
     font-family: "Broadway", Courier;
     letter-spacing: 1px;
-     transform: scaleY(1.2);
+    transform: scaleY(1.2);
 }
 
 .price-highlight {
