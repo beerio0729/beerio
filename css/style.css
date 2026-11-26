@@ -361,7 +361,7 @@ img {
     --ov-start: rgba(255, 255, 255, 0.75);
     --ov-mid: rgba(255, 255, 255, 0.5);
     --ov-end: rgba(255, 255, 255, 0);
-    --bg-pos: 100% center;
+    --bg-pos: 50% center;
 
     position: relative;
     padding: 75px 0 90px;
