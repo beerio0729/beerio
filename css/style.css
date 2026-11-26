@@ -1246,31 +1246,27 @@ img {
     }
 }
 
-/* ปุ่ม LINE ลอย: ซ่อนไว้ก่อน แสดงเฉพาะมือถือ */
+/* ปุ่ม LINE ลอย: */
+
 .line-float {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 16px;
+    bottom: 30px;
+    z-index: 999;
+    width: 70px;
+    border-radius: 50%;
+    box-shadow: 0 6px 18px rgba(6, 199, 85, 0.45);
 }
 
-@media (max-width: 767px),
-(max-height: 500px) and (orientation: landscape) {
-    .line-float {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        right: 16px;
-        bottom: 30px;
-        z-index: 999;
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        background: #06C755;
-        color: #FFFFFF;
-        font-size: 1.9rem;
-        box-shadow: 0 6px 18px rgba(6, 199, 85, 0.45);
-    }
+.line-float:active {
+    transform: scale(0.94);
+}
 
-    .line-float:active {
-        transform: scale(0.94);
-    }
+.line-icon {
+    display: block;
+    width: 100%;   /* แก้ขนาดตรงนี้ */
+
 }
