@@ -210,11 +210,12 @@ img {
 }
 
 .brand-name {
-    font-family: 'Inter', sans-serif;
+    font-family: "Broadway", Courier;
     font-size: 1rem;
-    font-weight: 700;
     color: var(--primary-navy);
-    line-height: 1.1;
+    line-height: 1;
+    transform: scaleY(1.2);
+    letter-spacing: 2px;
 }
 
 .brand-sub {
@@ -471,6 +472,9 @@ img {
     background: linear-gradient(90deg, var(--primary-navy), #3B82F6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-family: "Broadway", Courier;
+    letter-spacing: 1px;
+     transform: scaleY(1.2);
 }
 
 .price-highlight {
