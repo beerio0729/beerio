@@ -383,7 +383,7 @@ img {
 /* iPad Pro แนวตั้ง */
 @media (min-width: 768px) and (max-width: 1032px) and (orientation: portrait) {
     .home-section {
-        --bg-pos: 60% center;contain-intrinsic-size: ;
+        --bg-pos: 60% center;
     }
 }
 
