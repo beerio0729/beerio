@@ -210,7 +210,7 @@ img {
 }
 
 .brand-name {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Broadway', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     color: var(--primary-navy);
@@ -471,6 +471,7 @@ img {
     background: linear-gradient(90deg, var(--primary-navy), #3B82F6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-family: 'Broadway', sans-serif;
 }
 
 .price-highlight {
