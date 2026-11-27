@@ -58,7 +58,7 @@ function initSite() {
             }
         });
     });
-    
+
     //5. ถ้ามี has-dropdown ให้สร้างลูกศรชีขวา
     let hasDropdown = document.querySelectorAll('.nav-item.has-dropdown');
     hasDropdown.forEach(item => {
@@ -76,17 +76,19 @@ function initSite() {
 
     //6. ถ้ามี has-submenu ให้สร้างลูกศรชีขวา
     let hasSubmenu = document.querySelectorAll('.dropdown-item.has-submenu');
-    hasSubmenu.forEach(item => {
 
+    hasSubmenu.forEach(item => {
         const link = item.querySelector(':scope > .dropdown-link');
+
         if (link && !link.querySelector('.sub-arrow')) {
             const arrow = document.createElement('i');
 
-            arrow.className = 'fa-solid fa-chevron-right sub-arrow';
+            arrow.className = window.innerWidth <= 860
+                ? 'fa-solid fa-chevron-down sub-arrow'
+                : 'fa-solid fa-chevron-right sub-arrow';
 
             link.appendChild(arrow);
         }
-
     });
 
     // 7. รีเซ็ตสถานะเมนูเมื่อขยายจอกลับเป็น Desktop

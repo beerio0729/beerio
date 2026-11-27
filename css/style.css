@@ -1208,8 +1208,9 @@ img {
 
     .has-dropdown.active>.nav-link .arrow-icon,
     .has-submenu.active>.dropdown-link .sub-arrow {
-        transform: rotate(90deg);
+        transform: rotate(180deg);
     }
+    
 
     .nav-cta-wrap {
         margin: 12px 0 0;
