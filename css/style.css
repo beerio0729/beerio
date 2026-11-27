@@ -256,6 +256,10 @@ img {
     transition: transform 0.25s ease;
 }
 
+.sub-arrow {
+    transition: transform 0.25s ease;
+}
+
 /* Dropdown Layer 1 (Menu ลงด้านล่าง) */
 .dropdown-menu {
     position: absolute;
