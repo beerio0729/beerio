@@ -58,8 +58,38 @@ function initSite() {
             }
         });
     });
+    
+    //5. ถ้ามี has-dropdown ให้สร้างลูกศรชีขวา
+    let hasDropdown = document.querySelectorAll('.nav-item.has-dropdown');
+    hasDropdown.forEach(item => {
 
-    // 5. รีเซ็ตสถานะเมนูเมื่อขยายจอกลับเป็น Desktop
+        const link = item.querySelector(':scope > .nav-link');
+        if (link && !link.querySelector('.sub-arrow')) {
+            const arrow = document.createElement('i');
+
+            arrow.className = 'fa-solid fa-chevron-down arrow-icon';
+
+            link.appendChild(arrow);
+        }
+
+    });
+
+    //6. ถ้ามี has-submenu ให้สร้างลูกศรชีขวา
+    let hasSubmenu = document.querySelectorAll('.dropdown-item.has-submenu');
+    hasSubmenu.forEach(item => {
+
+        const link = item.querySelector(':scope > .dropdown-link');
+        if (link && !link.querySelector('.sub-arrow')) {
+            const arrow = document.createElement('i');
+
+            arrow.className = 'fa-solid fa-chevron-right sub-arrow';
+
+            link.appendChild(arrow);
+        }
+
+    });
+
+    // 7. รีเซ็ตสถานะเมนูเมื่อขยายจอกลับเป็น Desktop
     window.addEventListener('resize', () => {
         if (window.innerWidth > 860) {
             mainNav.classList.remove('open');
@@ -71,7 +101,7 @@ function initSite() {
         }
     });
 
-    // 6. สลับเปิด-ปิด Grid แพ็กเกจ รายเดือน / รายปี
+    // 8. สลับเปิด-ปิด Grid แพ็กเกจ รายเดือน / รายปี
     const billingTabs = document.querySelectorAll('.billing-tab');
     const billingPanels = document.querySelectorAll('.pricing-grid[data-billing-panel]');
 
