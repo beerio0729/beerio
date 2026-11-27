@@ -14,7 +14,8 @@
     /* สีฟ้าหม่นจากตัวอักษร E E R I O */
 
     --bg-main: #FFFFFF;
-    --bg-light: #F6F9FC;
+    --bg-light: #73cbef2e;
+    ;
     --text-dark: #1A2238;
     --text-body: #4A5568;
     --text-muted: #718096;
@@ -133,7 +134,12 @@ img {
 
 .btn-primary:hover {
     background: var(--primary-navy-dark);
-    transform: translateY(-2px);
+    transform: scale(1.02);
+}
+
+.btn-primary.translate-right:hover {
+    background: var(--primary-navy-dark);
+    transform: translateX(3px);
 }
 
 .btn-outline {
