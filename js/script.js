@@ -64,6 +64,7 @@ function initSite() {
     hasDropdown.forEach(item => {
 
         const link = item.querySelector(':scope > .nav-link');
+        
         if (link && !link.querySelector('.sub-arrow')) {
             const arrow = document.createElement('i');
 

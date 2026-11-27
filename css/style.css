@@ -280,8 +280,10 @@ img {
     transform: translateY(0);
 }
 
-.has-dropdown:hover>.nav-link .arrow-icon {
-    transform: rotate(180deg);
+@media (hover: hover) and (pointer: fine) {
+    .has-dropdown:hover>.nav-link .arrow-icon {
+        transform: rotate(180deg);
+    }
 }
 
 .dropdown-item {
@@ -1210,7 +1212,6 @@ img {
     .has-submenu.active>.dropdown-link .sub-arrow {
         transform: rotate(180deg);
     }
-    
 
     .nav-cta-wrap {
         margin: 12px 0 0;
